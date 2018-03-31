@@ -329,6 +329,7 @@ public class GroceryLister {
         });
         recipeMenu.add(button, c);
         
+        
         label = new JLabel("Recipes");
         label.setFont (label.getFont ().deriveFont (30.0f));
         c.fill = GridBagConstraints.CENTER;
