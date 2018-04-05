@@ -35,31 +35,8 @@ public class GroceryLister {
     private static JLabel label = new JLabel();
     private static JTextField textField = new JTextField();
     private static JTextArea textArea = new JTextArea();
-    
-    
-    /*
-    // input area
-        JLabel addLabel;
-        JLabel nameLabel;
-        JLabel ingredientsLabel;
-        JTextField nameInput;
-        JTextArea ingredientsInput;
-        JButton addRecipe;
+    private static JScrollPane scrollPane = new JScrollPane();
 
-        // schedule output area
-        JLabel scheduleLabel;
-        JButton createButton;
-        JLabel mondayLabel;
-  
-        JTextField monday;
-
-        JButton approveScheduleButton;
-        
-        // grocery list area
-        JLabel listLabel;
-        JTextArea listArea;
-        JButton approveListButton;
-     */   
     public  void addComponentToPane(Container pane) {
         JPanel mainMenu = new JPanel();
         JPanel listMenu = new JPanel();
@@ -298,11 +275,12 @@ public class GroceryLister {
         listMenu.add(label, c);
         
         textArea = new JTextArea(25, 20);
+        scrollPane = new JScrollPane(textArea);
         c.fill = GridBagConstraints.CENTER;
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 2;
-        listMenu.add(textArea, c);
+        listMenu.add(scrollPane, c);
         
         button = new JButton("Save List");
         button.setFont (button.getFont ().deriveFont (15.0f));
@@ -359,11 +337,13 @@ public class GroceryLister {
         recipeMenu.add(label, c);
         
         textArea = new JTextArea(5, 15);
+        scrollPane = new JScrollPane(textArea);
         c.fill = GridBagConstraints.CENTER;
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 3;
-        recipeMenu.add(textArea, c);
+        c.insets = new Insets(10,10,10,10);
+        recipeMenu.add(scrollPane, c);
         
         button = new JButton("Add");
         button.setFont (button.getFont ().deriveFont (15.0f));
@@ -373,9 +353,9 @@ public class GroceryLister {
         c.gridy = 3;
         recipeMenu.add(button, c);
         
-        textArea = new JTextArea(20, 20);
+        textArea = new JTextArea(10, 10);
         textArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane = new JScrollPane(textArea);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 4;
@@ -408,8 +388,10 @@ public class GroceryLister {
     public static void buildGUI(){
         //Create and set up the window.
         JFrame frame = new JFrame("Grocery Lister");
+        frame.pack();
+        frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setMinimumSize(new Dimension(600,375));
+        frame.setMinimumSize(new Dimension(600,600));
         frame.addComponentListener( new ComponentAdapter(){
             public void componentResized(ComponentEvent evt){
                 Dimension size = frame.getSize();
@@ -423,12 +405,9 @@ public class GroceryLister {
             }
         });
         frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
+        frame.setResizable(true);
         GroceryLister gui = new GroceryLister();
         gui.addComponentToPane(frame.getContentPane());
-        
-        frame.pack();
-        frame.setVisible(true);
     }
     
     public void readFile(Scanner s) {
