@@ -42,6 +42,7 @@ public class GroceryListerGUI {
     private static JTextArea recipeTextArea = new JTextArea();
     private static JTextArea ingredientsTextArea = new JTextArea();
     private static JTextArea textArea = new JTextArea();
+    JScrollPane scrollPane = new JScrollPane();
     private ArrayList<String[]> recipes = new ArrayList<String[]>();
     
     public  void addComponentToPane(Container pane) {
@@ -318,11 +319,12 @@ public class GroceryListerGUI {
         listMenu.add(label, c);
         
         listTextArea = new JTextArea(25, 20);
+        scrollPane = new JScrollPane(listTextArea);
         c.fill = GridBagConstraints.CENTER;
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 2;
-        listMenu.add(listTextArea, c);
+        listMenu.add(scrollPane, c);
         
         button = new JButton("Save List");
         button.setFont (button.getFont ().deriveFont (15.0f));
@@ -378,11 +380,12 @@ public class GroceryListerGUI {
         recipeMenu.add(label, c);
         
         ingredientsTextArea = new JTextArea(5, 15);
+        scrollPane = new JScrollPane(ingredientsTextArea);
         c.fill = GridBagConstraints.CENTER;
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 3;
-        recipeMenu.add(ingredientsTextArea, c);
+        recipeMenu.add(scrollPane, c);
         
         button = new JButton("Add");
         button.setFont (button.getFont ().deriveFont (15.0f));
@@ -400,7 +403,7 @@ public class GroceryListerGUI {
         
         recipeTextArea = new JTextArea(20, 20);
         textArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(recipeTextArea);
+        scrollPane = new JScrollPane(recipeTextArea);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 2;
         c.gridy = 4;
