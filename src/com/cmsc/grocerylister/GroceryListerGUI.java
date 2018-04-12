@@ -258,7 +258,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 0;
         c.gridy = 5;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){ 
             public void actionPerformed(ActionEvent ae) {
                 CardLayout showPanel =  (CardLayout) window.getLayout();
                 showPanel.show(window, "Recipes Menu");
@@ -272,7 +272,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 4;
         c.gridy = 5;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){ 
             public void actionPerformed(ActionEvent ae) {
                 CardLayout showPanel =  (CardLayout) window.getLayout();
                 showPanel.show(window, "List Menu");
@@ -286,7 +286,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 9;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){ 
             public void actionPerformed(ActionEvent ae) {
                 //TO DO: Should generate shopping list based on "Generate Plan" JButton, listTextArea.setText("****List Info****") 
             }
@@ -302,7 +302,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 0;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae) {
                 CardLayout showPanel =  (CardLayout) window.getLayout();
                 showPanel.show(window, "Main Menu");
@@ -342,7 +342,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 0;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){ 
             public void actionPerformed(ActionEvent ae) {
                 CardLayout showPanel =  (CardLayout) window.getLayout();
                 showPanel.show(window, "Main Menu");
@@ -393,7 +393,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 3;
         c.gridy = 3;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){ 
             public void actionPerformed(ActionEvent ae) {
                 //TO DO: add new ingredients to new recipe and save with nameTextField.getText() and add to recipe arrayList which will display in recipeTextArea
                 //Must have a try catch if recipe already exists. If editing a recipe it should overwrite previous recipe with new ingredients
@@ -415,7 +415,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 4;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae) {
                 //TO DO: edit selected recipe from recipeTextArea and populate nameTextField with recipe name and ingredientsTextArea with ingredients to edit
             }
@@ -428,7 +428,7 @@ public class GroceryListerGUI {
         c.weightx = 0.5;
         c.gridx = 3;
         c.gridy = 4;
-        button.addActionListener(new ActionListener(){ //Action Listener for search JButton
+        button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae) {
                 //TO DO: remove selected recipe from recipe ArrayList
             }
